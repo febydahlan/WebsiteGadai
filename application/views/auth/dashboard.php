@@ -64,8 +64,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Ajukan Gadai:</h6>
-                        <a class="collapse-item" href="pengajuan.html">Pengajuan</a>
-                        <a class="collapse-item" href="riwayat.html">Riwayat</a>
+                        <a class="collapse-item" href="<?php echo base_url('Dashboard/pengajuan') ?>">Pengajuan</a>
+                        <a class="collapse-item" href="<?php echo base_url('Dashboard/riwayat') ?>"">Riwayat</a>
                     </div>
                 </div>
             </li>

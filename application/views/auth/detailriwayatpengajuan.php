@@ -9,7 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Gadai-Riwayat Pengajuan</title>
+
+    <title><?php echo $title; ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,10 +21,10 @@
 
 </head>
 
-<body id="page-top">
+<body class="bg-gradient-primary">
 
-  <!-- Page Wrapper -->
-  <div id="wrapper">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -309,77 +310,68 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+            
+             <!--Breadcrumb-->
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="<?php echo base_url('Dashboard/riwayat') ?>">Riwayat</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Detail</li>
+                </ol>
+              </nav>
 
              <!-- Page Heading -->
              <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Riwayat Pengajuan</h1>   
+                <h1 class="h3 mb-0 text-gray-800">Detail Riwayat Pengajuan</h1>   
             </div>
 
-            <!-- DataTable -->
+            <!-- Basic Card Example -->
             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Data Pengajuan Nasabah</h6>
-                </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nama Nasabah</th>
-                                    <th>Status Jaminan</th>
-                                    <th>Mulai Pinjam</th>
-                                    <th>Batas Pengembalian</th>
-                                    <th>Sisa Peminjaman</th>
-                                    <th>Lain-lain</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>001</td>
-                                    <td>Leslie Alexander</td>
-                                    <td>Belum Selesai</td>
-                                    <td>22 Maret 2021</td>
-                                    <td>23 April 2021</td>
-                                    <td>Rp 1.000.000</td>
-                                    <td><a href="<?php echo base_url('Dashboard/detailriwayatpengajuan') ?>">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td>002</td>
-                                    <td>Darlene Robertson</td>
-                                    <td>Belum Selesai</td>
-                                    <td>22 Maret 2021</td>
-                                    <td>23 April 2021</td>
-                                    <td>Rp 3.000.000</td>
-                                    <td><a href="detail_riwayat.html">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td>003</td>
-                                    <td>Arlene McCoy</td>
-                                    <td>Selesai</td>
-                                    <td>24 Maret 2021</td>
-                                    <td>29 April 2021</td>
-                                    <td>Rp 0</td>
-                                    <td><a href="detail_riwayat.html">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                              <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">Previous</a>
-                              </li>
-                              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                              <li class="page-item"><a class="page-link" href="#">2</a></li>
-                              <li class="page-item"><a class="page-link" href="#">3</a></li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                              </li>
-                            </ul>
-                          </nav>
-                    </div>
+                    <form>
+                        <div class="form-group row">
+                          <label for="namaNasabah" class="col-sm-2 col-form-label">Nama</label>
+                          <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="namaNasabah" value="Leslie Alexander">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="alamatNasabah" class="col-sm-2 col-form-label">Alamat</label>
+                          <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="alamatNasabah" value="3891 Ranchview Dr. Richardson, California 62639">
+                          </div>
+                        </div>
+                      </form>
                 </div>
             </div>
+            <!-- Basic Card Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Riwayat Pengajuan</h6>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group row">
+                          <label for="mulaiPinjam" class="col-sm-2 col-form-label">Mulai Pinjam</label>
+                          <div class="col-sm-10">
+                            <p>22 Maret 2021</p>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="mulaiPinjam" class="col-sm-2 col-form-label">Batas Pengembalian</label>
+                            <div class="col-sm-10">
+                              <p>23 April 2021</p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="mulaiPinjam" class="col-sm-2 col-form-label">Status</label>
+                            <div class="col-sm-10 text-danger">
+                              <p>Belum Lunas</p>
+                            </div>
+                        </div>
+                      </form>
+                </div>
+            </div>
+
         </div>
         <!-- /.container-fluid -->
 
@@ -427,23 +419,16 @@ aria-hidden="true">
 </div>
 </div>
 
+<!-- Bootstrap core JavaScript-->
+<script src="<?php echo base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?php echo base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="<?php echo base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="<?php echo base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="<?php echo base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="<?php echo base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="<?php echo base_url('assets/'); ?>vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="<?php echo base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
-    <script src="<?php echo base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
 </body>
 
-</html> 
+</html>

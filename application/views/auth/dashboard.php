@@ -29,7 +29,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('Dashboard/index') ?>">
                 <div class="sidebar-brand-icon">
                     <i class="fa fa-balance-scale"></i>
                 </div>
@@ -41,7 +41,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?php echo base_url('Dashboard/index') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -64,8 +64,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Ajukan Gadai:</h6>
-                        <a class="collapse-item" href="pengajuan.html">Pengajuan</a>
-                        <a class="collapse-item" href="riwayat.html">Riwayat</a>
+                        <a class="collapse-item" href="<?php echo base_url('Dashboard/pengajuan') ?>">Pengajuan</a>
+                        <a class="collapse-item" href="<?php echo base_url('Dashboard/riwayat') ?>">Riwayat</a>
                     </div>
                 </div>
             </li>

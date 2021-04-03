@@ -25,4 +25,16 @@ class Dashboard extends CI_Controller
         $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('auth/detailriwayatpengajuan');
     }
+    public function catatanpembayaran()
+    {
+
+        $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
+        $this->load->view('auth/catatanpembayaran');
+    }
+    public function riwayatpembayaran()
+    {
+
+        $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
+        $this->load->view('auth/riwayatpembayaran');
+    }
 }

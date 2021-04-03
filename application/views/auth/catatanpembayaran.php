@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Gadai-Dashboard</title>
+    <title>Gadai-Catatan</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,7 +40,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('Dashboard/index') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -70,15 +70,15 @@
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fa fa-table"></i>
                     <span>Pembayaran</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pembayaran</h6>
-                        <a class="collapse-item" href="<?php echo base_url('Dashboard/catatanpembayaran') ?>">Catatan</a>
+                        <a class="collapse-item active" href="<?php echo base_url('Dashboard/catatanpembayaran') ?>">Catatan</a>
                         <a class="collapse-item" href="<?php echo base_url('Dashboard/riwayatpembayaran') ?>">Riwayat</a>
                     </div>
                 </div>
@@ -268,12 +268,16 @@
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Pengaturan
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Keluar
+                                    Logout
                                 </a>
                             </div>
                         </li>
@@ -288,195 +292,189 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-100 mx-2"></i> Export Data</a>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Nasabah</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">200 </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-user fa-2x text-gray-300"></i>
-                                        </div>
+                        <h1 class="h3 mb-0 text-gray-800">Daftar</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus fa-sm text-white-100 mx-2"></i>Tambah</a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Pengajuan Nasabah</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Total Pegawai</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">32</div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="formGroupExampleInput" class="form-label">Nama Nasabah</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Nasabah">
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-users fa-2x text-gray-300"></i>
+                                        <div class="mb-3">
+                                            <label for="formGroupExampleInput2" class="form-label">Alamat</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Alamat">
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Permintaan Pengajuan
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">20</div>
+                                        <div class="mb-3">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="formGroupExampleInput2" class="form-label" for="date">Tgl Pinjam</label>
+                                                    <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
+                                                </div>
+                                                <div class="col">
+                                                    <label for="formGroupExampleInput2" class="form-label" for="date">Tgl Pengembalian</label>
+                                                    <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        <div class="mb-3">
+                                            <label for="formGroupExampleInput2" class="form-label">Jumlah Peminjaman</label>
+                                            <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Minimal Rp100.000">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="formGroupExampleInput2" class="form-label">Nama Jaminan</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Isi nama jaminan dan bukti jaminan">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="formFile" class="form-label">Bukti Jaminan</label>
+                                            <input class="form-control" type="file" id="formFile">
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Peminjaman Selesai</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-check-circle fa-2x text-gray-300"></i>
-                                        </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                        <button type="button" class="btn btn-primary">Tambah</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Content Row -->
-
-                    <div class="row">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Total Peminjaman</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
+                    <!-- DataTable -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Data Catatan Pembayaran Nasabah</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nama Nasabah</th>
+                                            <th>Alamat</th>
+                                            <th>Mulai Pinjam</th>
+                                            <th>Batas Pengembalian</th>
+                                            <th>Sisa Pinjaman</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>001</td>
+                                            <td>Leslie Alexander</td>
+                                            <td>3891 Ranchview Dr. Richardson, California 62639</td>
+                                            <td>22 Maret 2021</td>
+                                            <td>23 April 2021</td>
+                                            <td>Rp 3.000.000</td>
+                                            <td>Detail</td>
+                                        </tr>
+                                        <tr>
+                                            <td>002</td>
+                                            <td>Darlene Robertson</td>
+                                            <td>2118 Thornridge Cir. Syracuse, Connecticut 35624</td>
+                                            <td>22 Maret 2021</td>
+                                            <td>23 April 2021</td>
+                                            <td>Rp 4.000.000</td>
+                                            <td>Detail</td>
+                                        </tr>
+                                        <tr>
+                                            <td>003</td>
+                                            <td>Arlene McCoy</td>
+                                            <td>3517 W. Gray St. Utica, Pennsylvania 57867</td>
+                                            <td>24 Maret 2021</td>
+                                            <td>29 April 2021</td>
+                                            <td>Rp 2.000.000</td>
+                                            <td>Detail</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Rangkuman</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Sedang dipinjam
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-danger"></i> Belum Bayar
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Lunas
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span>Copyright &copy; Gadai 2021</span>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- End of Footer -->
-
-                </div>
-                <!-- End of Content Wrapper -->
-
-            </div>
-            <!-- End of Page Wrapper -->
-
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fas fa-angle-up"></i>
-            </a>
-
-            <!-- Logout Modal-->
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Anda yakin ingin keluar</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="login.html">Keluar</a>
                         </div>
                     </div>
                 </div>
+                <!-- /.container-fluid -->
+
             </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Gadai 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-            <!-- Bootstrap core JavaScript-->
-            <script src="<?php echo base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-            <script src="<?php echo base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="<?php echo base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="<?php echo base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="<?php echo base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="<?php echo base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="<?php echo base_url('assets/'); ?>vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="<?php echo base_url('assets/'); ?>vendor/chart.js/Chart.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="<?php echo base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
-            <script src="<?php echo base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
-
+    <!-- Page level custom scripts -->
+    <script src="<?php echo base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
+    <script src="<?php echo base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
 </body>
 
 </html>

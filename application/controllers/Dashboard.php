@@ -5,36 +5,64 @@ class Dashboard extends CI_Controller
 {
     public function index()
     {
+        $data['title'] = 'Gadai-Dashboard';
         $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
-        $this->load->view('auth/dashboard');
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/dashboard', $data);
+        $this->load->view('templates/footer');
     }
 
     public function pengajuan()
     {
+        $data['title'] = 'Gadai-Pengajuan';
         $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
-        $this->load->view('auth/pengajuan');
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/pengajuan');
+        $this->load->view('templates/footer');
     }
 
     public function riwayat()
     {
+        $data['title'] = 'Gadai-Riwayat';
         $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
-        $this->load->view('auth/riwayat');
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/riwayat');
+        $this->load->view('templates/footer');
     }
     public function detailriwayatpengajuan()
     {
+        $data['title'] = 'Gadai-Riwayat';
         $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
-        $this->load->view('auth/detailriwayatpengajuan');
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/detailriwayatpengajuan');
+        $this->load->view('templates/footer');
     }
     public function catatanpembayaran()
     {
-
+        $data['title'] = 'Gadai-Pembayaran';
         $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
-        $this->load->view('auth/catatanpembayaran');
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/catatanpembayaran');
+        $this->load->view('templates/footer');
     }
     public function riwayatpembayaran()
     {
-
+        $data['title'] = 'Gadai-Riwayat';
         $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
-        $this->load->view('auth/riwayatpembayaran');
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/riwayatpembayaran');
+        $this->load->view('templates/footer');
     }
 }

@@ -3,10 +3,9 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url('Dashboard/index') ?>">
-        <div class="sidebar-brand-icon">
-            <i class="fa fa-balance-scale"></i>
+        <div class="sidebar-brand">
+            <img class="img-responsive mx-2" style="width: 80%" src="<?php echo base_url('assets/'); ?>img/Logo_White.png">
         </div>
-        <div class="sidebar-brand-text mx-2">Gadai</div>
     </a>
 
     <!-- Divider -->

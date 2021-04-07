@@ -29,6 +29,8 @@
                             <th>Mulai Pinjam</th>
                             <th>Batas Pengembalian</th>
                             <th>Jumlah Peminjaman</th>
+                            <th>Jaminan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,6 +42,11 @@
                                 <td><?php echo $ajuan->tanggal_pinjam ?></td>
                                 <td><?php echo $ajuan->batas_pengembalian ?></td>
                                 <td><?php echo $ajuan->jumlah_peminjaman ?></td>
+                                <td>
+                                    <a class="fa fa-search-plus fa-sm text-white-100 mx-2"></a>
+                                </td>
+                                <td><a class="fa fa-edit fa-sm text-white-100 mx-2"></a>
+                                </td>
                             </tr>
                         <?php } ?>
                     </tbody>

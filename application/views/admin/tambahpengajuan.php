@@ -13,31 +13,38 @@
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="nama" class="form-label ml-2">Nama Nasabah</label>
-                    <input type="text" class="form-control" id="nama">
+                    <input type="text" class="form-control" id="nama" name="nama">
+                    <?php echo form_error('nama', '<small class="text-danger pl-1">', '</small>'); ?>
                 </div>
                 <div class="form-group">
                     <label for="alamat" class="form-label mt-2 ml-2">Alamat Nasabah</label>
-                    <input type="text" class="form-control" id="alamat">
+                    <input type="text" class="form-control" id="alamat" name="alamat">
+                    <?php echo form_error('alamat', '<small class="text-danger pl-1">', '</small>'); ?>
                 </div>
                 <div class="form-group">
                     <label for="tanggal_pinjam" class="form-label mt-2 ml-2">Tanggal Gadai</label>
-                    <input type="date" class="form-control" value="2011-08-19" id="tanggal">
+                    <input type="date" class="form-control" id="tanggal" name="tanggal">
+                    <?php echo form_error('tanggal', '<small class="text-danger pl-1">', '</small>'); ?>
                 </div>
                 <div class="form-group">
                     <label for="batas_kembali" class="form-label mt-2 ml-2">Batas Pengembalian</label>
-                    <input type="date" class="form-control" value="2011-08-19" id="batas_kembali">
+                    <input type="date" class="form-control" id="batas_kembali" name="batas">
+                    <?php echo form_error('batas', '<small class="text-danger pl-1">', '</small>'); ?>
                 </div>
                 <div class="form-group">
                     <label for="jumlah" class="form-label mt-2 ml-2">Jumlah Pinjaman</label>
-                    <input class="form-control" type="number" value="500000" id="jumlah">
+                    <input class="form-control" type="number" id="jumlah" name="jumlah">
+                    <?php echo form_error('jumlah', '<small class="text-danger pl-1">', '</small>'); ?>
                 </div>
                 <div class="form-group">
                     <label for="jaminan" class="form-label mt-2 ml-2">Nama Jaminan</label>
-                    <input type="text" class="form-control" id="jaminan">
+                    <input type="text" class="form-control" id="jaminan" name="jaminan">
+                    <?php echo form_error('jaminan', '<small class="text-danger pl-1">', '</small>'); ?>
                 </div>
                 <div class="form-group">
                     <label for="bukti" class="form-label mt-2 ml-2">Bukti Jaminan</label>
-                    <input class="form-control" type="file" id="bukti" multiple>
+                    <input class="form-control" type="file" id="bukti" multiple name="bukti">
+                    <?php echo form_error('bukti', '<small class="text-danger pl-1">', '</small>'); ?>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button class="btn btn-secondary mr-2" type="submit" name="batal">Batal</button>

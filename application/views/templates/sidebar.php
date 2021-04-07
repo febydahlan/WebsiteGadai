@@ -38,7 +38,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('Dashboard/pengajuan'); ?>">
+        <a class="nav-link" href="<?php echo base_url('PengajuanGadai'); ?>">
             <i class="fas fa-fw fa fa-desktop"></i>
             <span>Pengajuan</span></a>
     </li>

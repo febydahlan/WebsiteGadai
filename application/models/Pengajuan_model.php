@@ -9,4 +9,9 @@ class Pengajuan_model extends CI_Model
         $this->db->from("pengajuan_gadai");
         return $this->db->get()->result();
     }
+
+    public function tambahPengajuan($data)
+    {
+        $this->db->insert('pengajuan_gadai, $data');
+    }
 }

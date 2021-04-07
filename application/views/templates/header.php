@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?php echo base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link rel="shortcut icon" type="image/jpg" href="<?php echo base_url('assets/'); ?>img/favicon_logo.png"/>
 </head>
 
 <body id="page-top">

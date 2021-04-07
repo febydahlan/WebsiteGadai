@@ -3,13 +3,13 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Riwayat Pengajuan</h1>
+        <h1 class="h3 mb-0 text-gray-800">Riwayat Pembayaran</h1>
     </div>
 
     <!-- DataTable -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Pengajuan Nasabah</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data Pembayaran Nasabah</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -33,7 +33,7 @@
                             <td>22 Maret 2021</td>
                             <td>23 April 2021</td>
                             <td>Rp 1.000.000</td>
-                            <td><a href="<?php echo base_url('Dashboard/detailriwayatpengajuan') ?>">Detail</a></td>
+                            <td><a href="<?php echo base_url('Dashboard/detailriwayatpembayaran') ?>">Detail</a></td>
                         </tr>
                         <tr>
                             <td>002</td>

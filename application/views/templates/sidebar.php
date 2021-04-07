@@ -15,7 +15,7 @@
     <!-- Dashboard -->
     <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('Dashboard') ?>">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
 
@@ -34,28 +34,23 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Interface
+        Admin Tool
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('Dashboard/pengajuan'); ?>">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa fa-desktop"></i>
             <span>Pengajuan</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('Dashboard/riwayat'); ?>">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Riwayat</span> </a>
-    </li>
-    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('Dashboard/catatanpembayaran'); ?>">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa fa-table"></i>
             <span>Pembayaran</span> </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('Dashboard/riwayatpembayaran');  ?>">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa fa-history"></i>
             <span>Riwayat</span> </a>
     </li>
 

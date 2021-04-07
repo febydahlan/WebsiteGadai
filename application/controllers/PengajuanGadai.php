@@ -32,7 +32,6 @@ class PengajuanGadai extends CI_Controller
         $this->form_validation->set_rules('batas', 'Batas Pengembalian', 'required');
         $this->form_validation->set_rules('jumlah', 'Jumlah Peminjaman', 'required');
         $this->form_validation->set_rules('jaminan', 'Nama Jaminan', 'required');
-        $this->form_validation->set_rules('bukti', 'Bukti Jaminan', 'required');
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
@@ -40,7 +39,9 @@ class PengajuanGadai extends CI_Controller
             $this->load->view('admin/tambahpengajuan', $data);
             $this->load->view('templates/footer');
         } else {
-            echo 'berhasil';
+            $this->Pengajuan_model->tambahData($data);
+            $this->session->set_flashdata('message', 'ditambahkan');
+            redirect('pengajuangadai');
         }
     }
 }

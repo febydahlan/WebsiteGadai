@@ -10,8 +10,18 @@ class Pengajuan_model extends CI_Model
         return $this->db->get()->result();
     }
 
-    public function tambahPengajuan($data)
+    public function tambahData($data)
     {
-        $this->db->insert('pengajuan_gadai, $data');
+        $data = [
+            "nama_nasabah" => $this->input->post('nama', true),
+            "alamat" =>  $this->input->post('alamat', true),
+            "tanggal_pinjam" => $this->input->post('tanggal', true),
+            "batas_pengembalian" => $this->input->post('batas', true),
+            "jumlah_peminjaman" => $this->input->post('jumlah', true),
+            "nama_jaminan" => $this->input->post('jaminan', true),
+            "bukti_jaminan" => $this->input->post('bukti', true)
+        ];
+
+        $this->db->insert('pengajuan_gadai', $data);
     }
 }

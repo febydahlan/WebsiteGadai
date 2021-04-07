@@ -44,7 +44,6 @@
                 <div class="form-group">
                     <label for="bukti" class="form-label mt-2 ml-2">Bukti Jaminan</label>
                     <input class="form-control" type="file" id="bukti" multiple name="bukti">
-                    <?php echo form_error('bukti', '<small class="text-danger pl-1">', '</small>'); ?>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button class="btn btn-secondary mr-2" type="submit" name="batal">Batal</button>

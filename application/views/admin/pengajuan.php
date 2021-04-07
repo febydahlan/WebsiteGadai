@@ -8,7 +8,11 @@
             <i class="fa fa-plus fa-sm text-white-100 mx-2">
             </i> Tambah</a>
     </div>
-
+    <?php if ($this->session->flashdata('message')) : ?>
+        <div class="alert alert-success" role="alert">
+            Data pengajuan gadai nasabah, Berhasil <?php echo $this->session->flashdata('message'); ?>
+        </div>
+    <?php endif; ?>
     <!-- DataTable -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">

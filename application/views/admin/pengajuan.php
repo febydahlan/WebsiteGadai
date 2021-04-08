@@ -34,9 +34,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($pengajuan as $ajuan) { ?>
+                        <?php $no = 1;
+                        foreach ($pengajuan as $ajuan) { ?>
                             <tr>
-                                <td></td>
+                                <td><?php echo $no++; ?></td>
                                 <td><?php echo $ajuan->nama_nasabah ?></td>
                                 <td><?php echo $ajuan->alamat ?></td>
                                 <td><?php echo $ajuan->tanggal_pinjam ?></td>

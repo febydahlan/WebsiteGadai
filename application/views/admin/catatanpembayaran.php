@@ -27,9 +27,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($pembayaran as $bayar) { ?>
+                        <?php $no = 1;
+                        foreach ($pembayaran as $bayar) { ?>
                             <tr>
-                                <td></td>
+                                <td><?php echo $no++; ?></td>
                                 <td><?php echo $bayar->nama_nasabah ?></td>
                                 <td><?php echo $bayar->alamat ?></td>
                                 <td><?php echo $bayar->tanggal_pinjam ?></td>

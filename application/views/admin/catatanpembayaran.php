@@ -31,13 +31,13 @@
                         foreach ($pembayaran as $bayar) { ?>
                             <tr>
                                 <td><?php echo $no++; ?></td>
-                                <td><?php echo $bayar->nama_nasabah ?></td>
-                                <td><?php echo $bayar->alamat ?></td>
-                                <td><?php echo $bayar->tanggal_pinjam ?></td>
-                                <td><?php echo $bayar->batas_pengembalian ?></td>
-                                <td><?php echo "Rp " . number_format($bayar->jumlah_peminjaman, 0, ",", ".")  ?></td>
+                                <td><?php echo $bayar['nama_nasabah'] ?></td>
+                                <td><?php echo $bayar['alamat'] ?></td>
+                                <td><?php echo $bayar['tanggal_pinjam'] ?></td>
+                                <td><?php echo $bayar['batas_pengembalian'] ?></td>
+                                <td><?php echo "Rp " . number_format($bayar['jumlah_peminjaman'], 0, ",", ".")  ?></td>
                                 <td>
-                                    <a href="<?php echo base_url('Pembayaran/detailPembayaran') ?>" class="fa fa-search-plus fa-sm text-white-100 mx-2"></a>
+                                    <a href="<?php echo base_url(); ?>Pembayaran/detailPembayaran/<?php echo $bayar['id_pengajuan']; ?>" class="fa fa-search-plus fa-sm text-white-100 mx-2"></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -59,8 +59,7 @@
             </div>
         </div>
     </div>
-</div>
-<!-- /.container-fluid -->
+    <!-- /.container-fluid -->
 
 </div>
 <!-- End of Main Content -->

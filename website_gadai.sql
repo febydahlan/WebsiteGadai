@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Apr 2021 pada 23.46
+-- Waktu pembuatan: 08 Apr 2021 pada 03.06
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.11
 
@@ -21,6 +21,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `website_gadai`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `catatan_pembayaran`
+--
+
+CREATE TABLE `catatan_pembayaran` (
+  `id` int(11) NOT NULL,
+  `id_pengajuan` int(11) NOT NULL,
+  `tanggal_bayar` date NOT NULL,
+  `nominal_bayar` int(11) NOT NULL,
+  `bukti_bayar` varchar(128) COLLATE utf8_bin NOT NULL,
+  `status_gadai` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data untuk tabel `catatan_pembayaran`
+--
+
+INSERT INTO `catatan_pembayaran` (`id`, `id_pengajuan`, `tanggal_bayar`, `nominal_bayar`, `bukti_bayar`, `status_gadai`) VALUES
+(1, 1, '2021-04-02', 100000, 'default.jpg', 0),
+(2, 1, '2021-04-05', 200000, 'default.jpg', 0),
+(4, 1, '2021-04-09', 100000, '', 0),
+(5, 2, '2021-04-15', 100000, '', 0);
 
 -- --------------------------------------------------------
 
@@ -126,6 +151,14 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `tittle`, `url`, `icon`) VALUES
 --
 
 --
+-- Indeks untuk tabel `catatan_pembayaran`
+--
+ALTER TABLE `catatan_pembayaran`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_pengajuan` (`id_pengajuan`),
+  ADD KEY `id_pengajuan_2` (`id_pengajuan`);
+
+--
 -- Indeks untuk tabel `pengajuan_gadai`
 --
 ALTER TABLE `pengajuan_gadai`
@@ -154,6 +187,12 @@ ALTER TABLE `user_sub_menu`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `catatan_pembayaran`
+--
+ALTER TABLE `catatan_pembayaran`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT untuk tabel `pengajuan_gadai`
 --
 ALTER TABLE `pengajuan_gadai`
@@ -176,6 +215,16 @@ ALTER TABLE `user_role`
 --
 ALTER TABLE `user_sub_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `catatan_pembayaran`
+--
+ALTER TABLE `catatan_pembayaran`
+  ADD CONSTRAINT `catatan_pembayaran_ibfk_1` FOREIGN KEY (`id_pengajuan`) REFERENCES `pengajuan_gadai` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

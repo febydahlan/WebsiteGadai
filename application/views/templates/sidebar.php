@@ -43,7 +43,7 @@
             <span>Pengajuan</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url('Dashboard/catatanpembayaran'); ?>">
+        <a class="nav-link" href="<?php echo base_url('Pembayaran'); ?>">
             <i class="fas fa-fw fa fa-table"></i>
             <span>Pembayaran</span> </a>
     </li>

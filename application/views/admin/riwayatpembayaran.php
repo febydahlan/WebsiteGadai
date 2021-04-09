@@ -18,10 +18,8 @@
                         <tr>
                             <th>ID</th>
                             <th>Nama Nasabah</th>
-                            <th>Status Jaminan</th>
-                            <th>Mulai Pinjam</th>
-                            <th>Batas Pengembalian</th>
-                            <th>Sisa Peminjaman</th>
+                            <th>Status Pegadaian</th>
+                            <th>Tanggal Awal Gadai</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,10 +28,12 @@
                             <tr>
                                 <td><?php echo $no++; ?></td>
                                 <td><?php echo $rwyt->nama_nasabah ?></td>
-                                <td><?php echo $rwyt->status ?></td>
+                                <td>
+                                    <?php if ($rwyt->status) : ?>
+                                        <?php echo 'Selesai' ?>
+                                    <?php endif; ?>
+                                </td>
                                 <td><?php echo $rwyt->tanggal_pinjam ?></td>
-                                <td><?php echo $rwyt->batas_pengembalian ?></td>
-                                <td><?php echo "Rp " . number_format($rwyt->jumlah_peminjaman, 0, ",", ".") ?></td>
 
                             </tr>
                         <?php } ?>

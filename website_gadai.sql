@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Apr 2021 pada 12.29
+-- Waktu pembuatan: 09 Apr 2021 pada 05.38
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.11
 
@@ -33,27 +33,28 @@ CREATE TABLE `catatan_pembayaran` (
   `id_pengajuan` int(11) NOT NULL,
   `tanggal_bayar` date NOT NULL,
   `nominal_bayar` int(11) NOT NULL,
-  `bukti_bayar` varchar(128) COLLATE utf8_bin NOT NULL,
-  `status_gadai` int(2) NOT NULL
+  `bukti_bayar` varchar(128) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data untuk tabel `catatan_pembayaran`
 --
 
-INSERT INTO `catatan_pembayaran` (`id`, `id_pengajuan`, `tanggal_bayar`, `nominal_bayar`, `bukti_bayar`, `status_gadai`) VALUES
-(1, 1, '2021-04-02', 100000, 'default.jpg', 0),
-(2, 1, '2021-04-05', 200000, 'default.jpg', 0),
-(4, 1, '2021-04-09', 100000, '', 0),
-(5, 2, '2021-04-15', 100000, '', 0),
-(6, 1, '2021-04-24', 100000, '', 0),
-(7, 1, '2021-04-24', 100000, '', 0),
-(8, 1, '2021-05-20', 100000, '', 0),
-(9, 1, '2021-04-26', 100000, '', 0),
-(10, 2, '2021-04-14', 100000, '', 0),
-(11, 2, '2021-04-14', 100000, '', 0),
-(12, 2, '2021-05-27', 100000, '', 0),
-(14, 1, '2021-06-24', 100000, '', 0);
+INSERT INTO `catatan_pembayaran` (`id`, `id_pengajuan`, `tanggal_bayar`, `nominal_bayar`, `bukti_bayar`) VALUES
+(1, 3, '2021-04-02', 100000, 'default.jpg'),
+(2, 3, '2021-04-05', 200000, 'default.jpg'),
+(4, 3, '2021-04-09', 100000, ''),
+(5, 2, '2021-04-15', 100000, ''),
+(6, 4, '2021-04-24', 100000, ''),
+(7, 4, '2021-04-24', 100000, ''),
+(8, 7, '2021-05-20', 100000, ''),
+(9, 7, '2021-04-26', 100000, ''),
+(10, 2, '2021-04-14', 100000, ''),
+(11, 2, '2021-04-14', 100000, ''),
+(12, 2, '2021-05-27', 100000, ''),
+(14, 1, '2021-06-24', 100000, ''),
+(15, 1, '2021-04-22', 100000, ''),
+(16, 1, '2021-06-21', 200000, '');
 
 -- --------------------------------------------------------
 
@@ -69,21 +70,23 @@ CREATE TABLE `pengajuan_gadai` (
   `batas_pengembalian` date NOT NULL,
   `jumlah_peminjaman` int(11) NOT NULL,
   `nama_jaminan` varchar(128) COLLATE utf8_bin NOT NULL,
-  `bukti_jaminan` varchar(128) COLLATE utf8_bin NOT NULL
+  `bukti_jaminan` varchar(128) COLLATE utf8_bin NOT NULL,
+  `status` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data untuk tabel `pengajuan_gadai`
 --
 
-INSERT INTO `pengajuan_gadai` (`id`, `nama_nasabah`, `alamat`, `tanggal_pinjam`, `batas_pengembalian`, `jumlah_peminjaman`, `nama_jaminan`, `bukti_jaminan`) VALUES
-(1, 'Park Jeong Woo', 'South Korea', '2021-04-01', '2021-07-01', 500000, 'Treasure', 'default.jpg'),
-(2, 'Kim Junkyu', 'South Korea', '2021-04-02', '2021-08-01', 100000, 'Treasure', 'default.jpg'),
-(3, 'Bang Yedam', 'South Korea', '2021-04-16', '2021-04-30', 900000, 'Treasure', ''),
-(4, 'Park Jihoon', 'South Korea', '2021-04-16', '2021-05-28', 300000, 'Treasure', ''),
-(5, 'So Junghwan', 'South Korea', '2021-04-23', '2021-12-23', 10000, 'Treasure', ''),
-(6, 'So Junghwan', 'South Korea', '2021-04-28', '2021-07-30', 400000, 'Treasure', ''),
-(7, 'Choi Hyunsuk', 'South Korea', '2021-04-16', '2021-12-23', 5000000, 'Treasure', '');
+INSERT INTO `pengajuan_gadai` (`id`, `nama_nasabah`, `alamat`, `tanggal_pinjam`, `batas_pengembalian`, `jumlah_peminjaman`, `nama_jaminan`, `bukti_jaminan`, `status`) VALUES
+(1, 'Park Jeong Woo', 'South Korea', '2021-04-01', '2021-07-01', 500000, 'Treasure', 'default.jpg', 1),
+(2, 'Kim Junkyu', 'South Korea', '2021-04-02', '2021-08-01', 100000, 'Treasure', 'default.jpg', 1),
+(3, 'Bang Yedam', 'South Korea', '2021-04-16', '2021-04-30', 900000, 'Treasure', '', 0),
+(4, 'Park Jihoon', 'South Korea', '2021-04-16', '2021-05-28', 300000, 'Treasure', '', 0),
+(5, 'So Junghwan', 'South Korea', '2021-04-23', '2021-12-23', 10000, 'Treasure', '', 0),
+(6, 'So Junghwan', 'South Korea', '2021-04-28', '2021-07-30', 400000, 'Treasure', '', 0),
+(7, 'Choi Hyunsuk', 'South Korea', '2021-04-16', '2021-12-23', 5000000, 'Treasure', '', 0),
+(8, 'Feby', 'South Korea', '2021-05-12', '2021-07-28', 1000000, 'Treasure', '', 0);
 
 -- --------------------------------------------------------
 
@@ -199,13 +202,13 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT untuk tabel `catatan_pembayaran`
 --
 ALTER TABLE `catatan_pembayaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengajuan_gadai`
 --
 ALTER TABLE `pengajuan_gadai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_admin`

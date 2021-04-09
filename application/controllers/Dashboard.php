@@ -7,6 +7,10 @@ class Dashboard extends CI_Controller
     {
         $data['title'] = 'Gadai-Dashboard';
         $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
+        $data['admin_total'] = $this->db->get('user_admin')->num_rows();
+        $data['total_nasabah'] = $this->db->get('pengajuan_gadai')->num_rows();
+        $data['total_pengajuan'] = $this->db->get('pengajuan_gadai')->num_rows();
+        $data['total_selesai'] = $this->db->get_where('pengajuan_gadai', ['status' => 0])->num_rows();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);

@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800 text-center"><?php echo 'Selamat Datang, '.$user['username']; ?></h1>
+    <h1 class="h3 mb-4 text-gray-800 text-center"><?php echo 'Selamat Datang, ' . $user['username']; ?></h1>
     <div class="col-xl-6 col-md-6 mb-4 mx-auto">
         <div class="card shadow h-100 py-2">
             <div class="card-body">
@@ -16,10 +16,6 @@
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" value="<?php echo $user['username']; ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">Jabatan</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Kata Sandi Lama</label>

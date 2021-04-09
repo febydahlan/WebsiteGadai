@@ -12,7 +12,7 @@ class Pembayaran_model extends CI_Model
         $this->db->select('*');
         $this->db->from('catatan_pembayaran');
         $this->db->join('pengajuan_gadai', 'pengajuan_gadai.id = catatan_pembayaran.id_pengajuan');
-        $this->db->group_by(array('id_pengajuan'));
+        $this->db->group_by(array('id_pengajuan'))->where(['status' => 0]);
         return $this->db->get()->result_array();
     }
 

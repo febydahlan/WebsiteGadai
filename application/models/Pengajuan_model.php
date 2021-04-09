@@ -3,10 +3,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pengajuan_model extends CI_Model
 {
-    public function getDataPengajuan()
+    public function getDataPengajuan($limit, $start)
     {
         $this->db->select("*");
-        return $this->db->get_where('pengajuan_gadai', ['status' => 0])->result();
+        return $this->db->get_where('pengajuan_gadai',['status' => 0], $limit, $start)->result();
     }
 
     public function tambahData($data)
@@ -23,4 +23,10 @@ class Pengajuan_model extends CI_Model
 
         $this->db->insert('pengajuan_gadai', $data);
     }
+    
+    public function countAllData()
+    {
+        return $this->db->get('pengajuan_gadai')->num_rows();
+    }
+
 }

@@ -52,7 +52,7 @@ class PengajuanGadai extends CI_Controller
 
         $data['start'] = $this->uri->segment(2);
 
-        $data['pengajuan'] = $this->Pengajuan_model->getDataPengajuan($config['per_page'], $data['start']);
+        $data['pengajuan'] = $this->Pengajuan_model->getDataPengajuan();
         $data['title'] = 'Gadai-Pengajuan';
         $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
 

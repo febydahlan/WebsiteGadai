@@ -6,7 +6,15 @@ class Pengajuan_model extends CI_Model
     public function getDataPengajuan($limit, $start)
     {
         $this->db->select("*");
+
         return $this->db->get_where('pengajuan_gadai',['status' => 0], $limit, $start)->result();
+        $this->db->order_by('tanggal_pinjam', 'ASC');
+        return $this->db->get_where('pengajuan_gadai', ['status' => 0])->result();
+    }
+    public function getDataRiwayat()
+    {
+        $this->db->select("*");
+        return $this->db->get_where('pengajuan_gadai', ['status' => 1])->result();
     }
 
     public function tambahData($data)

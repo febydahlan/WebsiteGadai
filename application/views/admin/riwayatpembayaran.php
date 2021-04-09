@@ -22,37 +22,21 @@
                             <th>Mulai Pinjam</th>
                             <th>Batas Pengembalian</th>
                             <th>Sisa Peminjaman</th>
-                            <th>Lain-lain</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>Leslie Alexander</td>
-                            <td>Belum Selesai</td>
-                            <td>22 Maret 2021</td>
-                            <td>23 April 2021</td>
-                            <td>Rp 1.000.000</td>
-                            <td><a href="<?php echo base_url('Dashboard/detailriwayatpembayaran') ?>">Detail</a></td>
-                        </tr>
-                        <tr>
-                            <td>002</td>
-                            <td>Darlene Robertson</td>
-                            <td>Belum Selesai</td>
-                            <td>22 Maret 2021</td>
-                            <td>23 April 2021</td>
-                            <td>Rp 3.000.000</td>
-                            <td><a href="detail_riwayat.html">Detail</a></td>
-                        </tr>
-                        <tr>
-                            <td>003</td>
-                            <td>Arlene McCoy</td>
-                            <td>Selesai</td>
-                            <td>24 Maret 2021</td>
-                            <td>29 April 2021</td>
-                            <td>Rp 0</td>
-                            <td><a href="detail_riwayat.html">Detail</a></td>
-                        </tr>
+                        <?php $no = 1;
+                        foreach ($riwayat as $rwyt) { ?>
+                            <tr>
+                                <td><?php echo $no++; ?></td>
+                                <td><?php echo $rwyt->nama_nasabah ?></td>
+                                <td><?php echo $rwyt->status ?></td>
+                                <td><?php echo $rwyt->tanggal_pinjam ?></td>
+                                <td><?php echo $rwyt->batas_pengembalian ?></td>
+                                <td><?php echo "Rp " . number_format($rwyt->jumlah_peminjaman, 0, ",", ".") ?></td>
+
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
                 <nav aria-label="Page navigation example">

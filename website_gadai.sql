@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Apr 2021 pada 03.06
+-- Waktu pembuatan: 08 Apr 2021 pada 12.29
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.11
 
@@ -45,7 +45,15 @@ INSERT INTO `catatan_pembayaran` (`id`, `id_pengajuan`, `tanggal_bayar`, `nomina
 (1, 1, '2021-04-02', 100000, 'default.jpg', 0),
 (2, 1, '2021-04-05', 200000, 'default.jpg', 0),
 (4, 1, '2021-04-09', 100000, '', 0),
-(5, 2, '2021-04-15', 100000, '', 0);
+(5, 2, '2021-04-15', 100000, '', 0),
+(6, 1, '2021-04-24', 100000, '', 0),
+(7, 1, '2021-04-24', 100000, '', 0),
+(8, 1, '2021-05-20', 100000, '', 0),
+(9, 1, '2021-04-26', 100000, '', 0),
+(10, 2, '2021-04-14', 100000, '', 0),
+(11, 2, '2021-04-14', 100000, '', 0),
+(12, 2, '2021-05-27', 100000, '', 0),
+(14, 1, '2021-06-24', 100000, '', 0);
 
 -- --------------------------------------------------------
 
@@ -74,7 +82,8 @@ INSERT INTO `pengajuan_gadai` (`id`, `nama_nasabah`, `alamat`, `tanggal_pinjam`,
 (3, 'Bang Yedam', 'South Korea', '2021-04-16', '2021-04-30', 900000, 'Treasure', ''),
 (4, 'Park Jihoon', 'South Korea', '2021-04-16', '2021-05-28', 300000, 'Treasure', ''),
 (5, 'So Junghwan', 'South Korea', '2021-04-23', '2021-12-23', 10000, 'Treasure', ''),
-(6, 'So Junghwan', 'South Korea', '2021-04-28', '2021-07-30', 400000, 'Treasure', '');
+(6, 'So Junghwan', 'South Korea', '2021-04-28', '2021-07-30', 400000, 'Treasure', ''),
+(7, 'Choi Hyunsuk', 'South Korea', '2021-04-16', '2021-12-23', 5000000, 'Treasure', '');
 
 -- --------------------------------------------------------
 
@@ -190,13 +199,13 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT untuk tabel `catatan_pembayaran`
 --
 ALTER TABLE `catatan_pembayaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengajuan_gadai`
 --
 ALTER TABLE `pengajuan_gadai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_admin`

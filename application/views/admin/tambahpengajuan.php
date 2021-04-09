@@ -46,8 +46,8 @@
                     <input class="form-control" type="file" id="bukti" multiple name="bukti">
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-secondary mr-2" type="submit" name="batal">Batal</button>
-                    <button class="btn btn-primary" type="submit" name="tambah">Tambah</button>
+                    <a href="<?php echo base_url('PengajuanGadai'); ?>" class="btn btn-secondary mr-2" type="submit" name="batal">Batal</a>
+                    <button href="<?php echo base_url('PengajuanGadai/tambahPengajuan'); ?>" class="btn btn-primary" type="submit" name="tambah">Tambah</button>
                 </div>
             </form>
         </div>

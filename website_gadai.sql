@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Apr 2021 pada 05.38
--- Versi server: 10.1.36-MariaDB
--- Versi PHP: 7.2.11
+-- Generation Time: Apr 09, 2021 at 02:39 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `catatan_pembayaran`
+-- Table structure for table `catatan_pembayaran`
 --
 
 CREATE TABLE `catatan_pembayaran` (
@@ -37,7 +36,7 @@ CREATE TABLE `catatan_pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data untuk tabel `catatan_pembayaran`
+-- Dumping data for table `catatan_pembayaran`
 --
 
 INSERT INTO `catatan_pembayaran` (`id`, `id_pengajuan`, `tanggal_bayar`, `nominal_bayar`, `bukti_bayar`) VALUES
@@ -59,7 +58,7 @@ INSERT INTO `catatan_pembayaran` (`id`, `id_pengajuan`, `tanggal_bayar`, `nomina
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengajuan_gadai`
+-- Table structure for table `pengajuan_gadai`
 --
 
 CREATE TABLE `pengajuan_gadai` (
@@ -75,7 +74,7 @@ CREATE TABLE `pengajuan_gadai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data untuk tabel `pengajuan_gadai`
+-- Dumping data for table `pengajuan_gadai`
 --
 
 INSERT INTO `pengajuan_gadai` (`id`, `nama_nasabah`, `alamat`, `tanggal_pinjam`, `batas_pengembalian`, `jumlah_peminjaman`, `nama_jaminan`, `bukti_jaminan`, `status`) VALUES
@@ -86,12 +85,17 @@ INSERT INTO `pengajuan_gadai` (`id`, `nama_nasabah`, `alamat`, `tanggal_pinjam`,
 (5, 'So Junghwan', 'South Korea', '2021-04-23', '2021-12-23', 10000, 'Treasure', '', 0),
 (6, 'So Junghwan', 'South Korea', '2021-04-28', '2021-07-30', 400000, 'Treasure', '', 0),
 (7, 'Choi Hyunsuk', 'South Korea', '2021-04-16', '2021-12-23', 5000000, 'Treasure', '', 0),
-(8, 'Feby', 'South Korea', '2021-05-12', '2021-07-28', 1000000, 'Treasure', '', 0);
+(8, 'Feby', 'South Korea', '2021-05-12', '2021-07-28', 1000000, 'Treasure', '', 0),
+(9, 'Tari', 'Sleman', '2021-04-05', '2021-04-28', 500000, 'Emas 1g', 'emas1g.jpg', 0),
+(10, 'Vita Meen', 'Sleman', '2021-04-09', '2021-04-09', 7000000, 'Televisi', 'tv.jpg', 0),
+(11, 'Paraa Mita', 'Bandung', '2021-04-09', '2021-04-09', 12000000, 'Iphone', 'ip12.jpg', 0),
+(12, 'Deren', 'Jakarta', '2021-04-01', '2025-10-09', 40000000, 'Emas 50g', 'emas50g.jpg', 0),
+(13, 'Gita Gitata', 'Bandung', '2021-04-04', '2021-04-09', 500000, 'Emas 1g', 'emas1g.jpg', 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_admin`
+-- Table structure for table `user_admin`
 --
 
 CREATE TABLE `user_admin` (
@@ -106,7 +110,7 @@ CREATE TABLE `user_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data untuk tabel `user_admin`
+-- Dumping data for table `user_admin`
 --
 
 INSERT INTO `user_admin` (`id_admin`, `username`, `email`, `image`, `password`, `role_id`, `is_activated`, `date_created`) VALUES
@@ -117,7 +121,7 @@ INSERT INTO `user_admin` (`id_admin`, `username`, `email`, `image`, `password`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_role`
+-- Table structure for table `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -126,7 +130,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data untuk tabel `user_role`
+-- Dumping data for table `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
@@ -136,7 +140,7 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_sub_menu`
+-- Table structure for table `user_sub_menu`
 --
 
 CREATE TABLE `user_sub_menu` (
@@ -148,7 +152,7 @@ CREATE TABLE `user_sub_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Dumping data untuk tabel `user_sub_menu`
+-- Dumping data for table `user_sub_menu`
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `tittle`, `url`, `icon`) VALUES
@@ -163,7 +167,7 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `tittle`, `url`, `icon`) VALUES
 --
 
 --
--- Indeks untuk tabel `catatan_pembayaran`
+-- Indexes for table `catatan_pembayaran`
 --
 ALTER TABLE `catatan_pembayaran`
   ADD PRIMARY KEY (`id`),
@@ -171,69 +175,69 @@ ALTER TABLE `catatan_pembayaran`
   ADD KEY `id_pengajuan_2` (`id_pengajuan`);
 
 --
--- Indeks untuk tabel `pengajuan_gadai`
+-- Indexes for table `pengajuan_gadai`
 --
 ALTER TABLE `pengajuan_gadai`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user_admin`
+-- Indexes for table `user_admin`
 --
 ALTER TABLE `user_admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `user_role`
+-- Indexes for table `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user_sub_menu`
+-- Indexes for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `catatan_pembayaran`
+-- AUTO_INCREMENT for table `catatan_pembayaran`
 --
 ALTER TABLE `catatan_pembayaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT untuk tabel `pengajuan_gadai`
+-- AUTO_INCREMENT for table `pengajuan_gadai`
 --
 ALTER TABLE `pengajuan_gadai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT untuk tabel `user_admin`
+-- AUTO_INCREMENT for table `user_admin`
 --
 ALTER TABLE `user_admin`
   MODIFY `id_admin` int(128) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `user_role`
+-- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `user_sub_menu`
+-- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `catatan_pembayaran`
+-- Constraints for table `catatan_pembayaran`
 --
 ALTER TABLE `catatan_pembayaran`
   ADD CONSTRAINT `catatan_pembayaran_ibfk_1` FOREIGN KEY (`id_pengajuan`) REFERENCES `pengajuan_gadai` (`id`);

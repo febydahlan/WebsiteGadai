@@ -8,6 +8,11 @@ class Pengajuan_model extends CI_Model
         $this->db->select("*");
         return $this->db->get_where('pengajuan_gadai', ['status' => 0])->result();
     }
+    public function getDataRiwayat()
+    {
+        $this->db->select("*");
+        return $this->db->get_where('pengajuan_gadai', ['status' => 1])->result();
+    }
 
     public function tambahData($data)
     {

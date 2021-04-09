@@ -4,14 +4,16 @@ Chart.defaults.global.defaultFontColor = '#858796';
 
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
+var method = "GET";
+
 var myPieChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    labels: ["Sedang dipinjam", "belum dibayar", "Lunas"],
+    labels: ["Pengajuan", "Peminjaman"],
     datasets: [{
-      data: [55, 30, 15],
-      backgroundColor: ['#4e73df', '#FF0000', '#36b9cc'],
-      hoverBackgroundColor: ['#2e59d9', '#FF0000', '#2c9faf'],
+      data: [12,3],
+      backgroundColor: ['#4e73df', '#FF0000'],
+      hoverBackgroundColor: ['#2e59d9', '#FF0000'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
   },

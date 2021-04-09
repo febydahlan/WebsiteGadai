@@ -120,48 +120,13 @@
                     </div>
                     <div class="mt-4 text-center small">
                         <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Sedang dipinjam
+                            <i class="fas fa-circle text-primary"></i> Pengajuan
                         </span>
                         <span class="mr-2">
-                            <i class="fas fa-circle text-danger"></i> Belum Bayar
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-info"></i> Lunas
+                            <i class="fas fa-circle text-danger"></i> Peminjaman
                         </span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-<script>
-    jQuery.ajax({
-    type: "GET",
-    url: '<?php echo base_url('dashboard/chart_report');?>',
-    success: function (response) {
-        console.log(response);
-
-        var datas = JSON.parse(response);
-        console.log(datas);
-        console.log(datas[0].attitudescore);
-
-        for (const key in datas) {
-            if (datas.hasOwnProperty(key)) {
-                const element = datas[key];
-                let active = datas[key].attitudescore;
-                let pending = datas[key].teachingscore;
-                let cancelled = datas[key].jobinvolvscore;
-
-                console.log('Initial value:' + subsChart.data.datasets[key].data);
-                subsChart.data.datasets[key].data[0] = active;
-                subsChart.data.datasets[key].data[1] = pending;
-                subsChart.data.datasets[key].data[2] = cancelled;
-            }
-        }
-
-        subsChart.update();
-
-        console.log('Updated value:' + subsChart.data.datasets[0].data);
-    }
-})
-</script>

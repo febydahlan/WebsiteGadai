@@ -53,4 +53,15 @@ class Dashboard extends CI_Controller
         $this->load->view('admin/akunpengguna');
         $this->load->view('templates/footer');
     }
+    public function chart_report()
+    {
+        $alldata = $this->donat_model();
+
+        $datas = array();
+        foreach ($alldata as $d)
+        {
+            $datas[]=$d;
+        }
+        print json_encode($datas);  
+    }
 }

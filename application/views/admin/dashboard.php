@@ -133,3 +133,35 @@
             </div>
         </div>
     </div>
+
+<script>
+    jQuery.ajax({
+    type: "GET",
+    url: '<?php echo base_url('dashboard/chart_report');?>',
+    success: function (response) {
+        console.log(response);
+
+        var datas = JSON.parse(response);
+        console.log(datas);
+        console.log(datas[0].attitudescore);
+
+        for (const key in datas) {
+            if (datas.hasOwnProperty(key)) {
+                const element = datas[key];
+                let active = datas[key].attitudescore;
+                let pending = datas[key].teachingscore;
+                let cancelled = datas[key].jobinvolvscore;
+
+                console.log('Initial value:' + subsChart.data.datasets[key].data);
+                subsChart.data.datasets[key].data[0] = active;
+                subsChart.data.datasets[key].data[1] = pending;
+                subsChart.data.datasets[key].data[2] = cancelled;
+            }
+        }
+
+        subsChart.update();
+
+        console.log('Updated value:' + subsChart.data.datasets[0].data);
+    }
+})
+</script>

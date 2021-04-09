@@ -85,4 +85,39 @@ class PengajuanGadai extends CI_Controller
             redirect('pengajuangadai');
         }
     }
+
+    public function editPengajuan($id)
+    {
+        $data['title'] = 'edit Pengajuan';
+        $data['user'] = $this->db->get_where('user_admin', ['email' => $this->session->userdata('email')])->row_array();
+        $data['pengajuan'] = $this->Pengajuan_model->getById($id);
+        $data['id'] = $id;
+
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('id', 'ID', 'required');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('admin/pengajuanedit', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $this->Pengajuan_model->editData($data);
+            $this->session->set_flashdata('message', 'Di Edit');
+            redirect('pengajuangadai');
+        }
+    }
+
+    public function hapusPengajuan($id)
+    {
+        if ($id == "") {
+            $this->session->set_flashdata('error', "Data Anda Gagal Di Hapus");
+            redirect('PengajuanGadai');
+        } else {
+            $this->db->where('id', $id);
+            $this->db->delete('pengajuan_gadai');
+            $this->session->set_flashdata('message', "Di Hapus");
+            redirect('PengajuanGadai');
+        }
+    }
 }

@@ -53,7 +53,7 @@
                         <?php } ?>
                     </tbody>
                 </table>
-                <?= $this->pagination->create_links(); ?>
+                <!-- <?= $this->pagination->create_links(); ?> -->
             </div>
         </div>
     </div>

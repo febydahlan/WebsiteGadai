@@ -35,7 +35,7 @@
                                 <td><?php echo $bayar['tanggal_pinjam'] ?></td>
                                 <td><?php echo $bayar['batas_pengembalian'] ?></td>
                                 <td>
-                                    <a href="<?php echo base_url(); ?>Pembayaran/detailPembayaran/<?php echo $bayar['id_pengajuan']; ?>" class="fa fa-search-plus fa-sm text-white-100 mx-2"></a>
+                                    <a href="<?php echo base_url(); ?>Pembayaran/detailPembayaran/<?php echo $bayar['id']; ?>" class="fa fa-search-plus fa-sm text-white-100 mx-2"></a>
                                 </td>
                             </tr>
                         <?php } ?>

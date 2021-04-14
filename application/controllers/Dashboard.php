@@ -16,11 +16,12 @@ class Dashboard extends CI_Controller
         $data['total_nasabah'] = $this->db->get('pengajuan_gadai')->num_rows();
         $data['total_pengajuan'] = $this->db->get_where('pengajuan_gadai', ['status' => 0])->num_rows();
         $data['total_selesai'] = $this->db->get_where('pengajuan_gadai', ['status' => 1])->num_rows();
+        $data['data'] = $this->db->select('COUNT(*) as count, MONTH(tanggal_pinjam) as month')->from('pengajuan_gadai')->group_by('MONTH(tanggal_pinjam)')->get()->result_array();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('admin/dashboard', $data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footerDash', $data);
     }
 
     public function riwayatpembayaran()

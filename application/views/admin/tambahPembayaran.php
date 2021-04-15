@@ -11,10 +11,8 @@
         </div>
         <div class="card-body">
             <form action="" method="POST">
-                <div class="form-group">
-                    <label for="id" class="form-label mt-2 ml-2">Id Pengajuan Gadai</label>
-                    <input class="form-control" type="number" id="jumlah" name="id" value="<?php echo $pembayaran['id_pengguna']; ?>">
-                    <?php echo form_error('jumlah', '<small class="text-danger pl-1">', '</small>'); ?>
+                <div class=" form-group">
+                    <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $this->session->userdata('id_pengajuan'); ?>">
                 </div>
                 <div class=" form-group">
                     <label for="tanggal_bayar" class="form-label mt-2 ml-2">Tanggal Bayar</label>

@@ -45,7 +45,7 @@
                                 <td><?php echo "Rp " . number_format($ajuan->jumlah_peminjaman, 0, ",", ".") ?></td>
                                 <td><?php echo $ajuan->nama_jaminan ?>
                                 </td>
-                                <td><a href="<?php echo base_url('PengajuanGadai/editPengajuan') . "/" . $ajuan->id; ?>"><button type="button" class="btn btn-primary">Edit</button></a>
+                                <td><a href="<?php echo base_url('PengajuanGadai/editPengajuan') . "/" . $ajuan->id; ?>"><button type="button" class="btn btn-primary mb-1">Edit</button></a>
                                     <a href="<?php echo base_url('PengajuanGadai/hapusPengajuan') . "/" . $ajuan->id; ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
                                 </td>
 

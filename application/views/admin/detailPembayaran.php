@@ -3,7 +3,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <a href="<?php echo base_url('Pembayaran/tambahPembayaran'); ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ">
+        <a href="<?php echo base_url('pembayaran/tambahPembayaran/' . $this->session->userdata('id_pengajuan')); ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ">
             <i class="fa fa-plus fa-sm text-white-100 mx-2">
             </i> Tambah</a>
     </div>

@@ -6,8 +6,9 @@ class Pengajuan_model extends CI_Model
     public function getDataPengajuan()
     {
         $this->db->select("*");
+        $this->db->from("pengajuan_gadai");
         $this->db->order_by('tanggal_pinjam', 'ASC');
-        return $this->db->get_where('pengajuan_gadai', ['status' => 0])->result();
+        return $this->db->get()->result();
     }
     public function getDataRiwayat()
     {
@@ -29,7 +30,7 @@ class Pengajuan_model extends CI_Model
 
         $this->db->insert('pengajuan_gadai', $data);
     }
-    
+
     public function countAllData()
     {
         return $this->db->get('pengajuan_gadai')->num_rows();

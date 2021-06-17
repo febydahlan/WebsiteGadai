@@ -30,6 +30,7 @@
                             <th>Batas Pengembalian</th>
                             <th>Jumlah Peminjaman</th>
                             <th>Jaminan</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -45,6 +46,11 @@
                                 <td><?php echo "Rp " . number_format($ajuan->jumlah_peminjaman, 0, ",", ".") ?></td>
                                 <td><?php echo $ajuan->nama_jaminan ?>
                                 </td>
+                                <?php if ($ajuan->status == 0) : ?>
+                                    <td> Belum Lunas </td>
+                                <?php else : ?>
+                                    <td> Lunas </td>
+                                <?php endif; ?>
                                 <td><a href="<?php echo base_url('PengajuanGadai/editPengajuan') . "/" . $ajuan->id; ?>"><button type="button" class="btn btn-primary mb-1">Edit</button></a>
                                     <a href="<?php echo base_url('PengajuanGadai/hapusPengajuan') . "/" . $ajuan->id; ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
                                 </td>

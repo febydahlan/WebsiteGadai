@@ -5,6 +5,17 @@ namespace chriskacerguis\RestServer;
 use Exception;
 use stdClass;
 
+
+const HTTP_OK = 200;
+const HTTP_CREATED = 201;
+const HTTP_NOT_MODIFIED = 304;
+const HTTP_BAD_REQUEST = 400;
+const HTTP_UNAUTHORIZED = 401;
+const HTTP_FORBIDDEN = 403;
+const HTTP_NOT_FOUND = 404;
+const HTTP_NOT_ACCEPTABLE = 406;
+const HTTP_INTERNAL_ERROR = 500;
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
@@ -196,7 +207,11 @@ class RestController extends \CI_Controller
 
     /**
      * Enable XSS flag
+<<<<<<< HEAD
      * Determines whether the XSS filter is always active when
+=======
+     * Determines whether the XSS filter is always active whenRestController 
+>>>>>>> API
      * GET, OPTIONS, HEAD, POST, PUT, DELETE and PATCH data is encountered
      * Set automatically based on config setting.
      *
@@ -211,6 +226,7 @@ class RestController extends \CI_Controller
      *
      * @link http://www.restapitutorial.com/httpstatuscodes.html
      */
+<<<<<<< HEAD
     const HTTP_OK = 200;
     const HTTP_CREATED = 201;
     const HTTP_NOT_MODIFIED = 304;
@@ -220,6 +236,8 @@ class RestController extends \CI_Controller
     const HTTP_NOT_FOUND = 404;
     const HTTP_NOT_ACCEPTABLE = 406;
     const HTTP_INTERNAL_ERROR = 500;
+=======
+>>>>>>> API
 
     /**
      * @var Format

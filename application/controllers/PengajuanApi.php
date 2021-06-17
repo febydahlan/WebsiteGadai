@@ -8,7 +8,6 @@ class PengajuanApi extends RestController
     {
         parent::__construct();
         $this->load->model('Pengajuan_model');
-        $this->load->model('Pembayaran_model');
     }
 
     public function index_get()
